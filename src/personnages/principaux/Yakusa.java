@@ -5,13 +5,13 @@ import personnages.Humain;
 public class Yakusa extends Humain{
 	
 	private String clan;
-	private int reputaion; 
+	private int reputation; 
 	
 	public Yakusa(String nom, int argent, String boisson, String clan) {
 		
 		super(nom,argent,boisson);
 		this.clan = clan;
-		this.reputaion = 0;
+		this.reputation = 0;
 	}
 	
 	public String getClan() {
@@ -19,11 +19,18 @@ public class Yakusa extends Humain{
 	}
 
 	public int getReputaion() {
-		return reputaion;
+		return reputation;
 	}
 	
 	public void extorquer(Commercant c) {
-		//TODO à faire 
+		
+		int benef = c.seFaireExtorquer();
+		
+		this.gagnerArgent(benef);
+		
+		String str = "J’ai piqué le fric de " + c.getNom();
+		
+		this.parler(str);
 	}
 	
 	public void gagnerDuel() {
@@ -38,5 +45,10 @@ public class Yakusa extends Humain{
 	@Override
 	public void direBonjour() {
 		
-	}
+		super.direBonjour();
+		
+		String txt = "J'appartiens au clan " + this.clan + " !";
+        this.parler(txt);
+    }
+
 }

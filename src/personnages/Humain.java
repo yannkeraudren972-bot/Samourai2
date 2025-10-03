@@ -15,13 +15,13 @@ public class Humain {
 	
 	public void parler(String texte) {
 		
-		System.out.println(this.nom + " - " + texte);
+		System.out.println(this.nom + " - " + texte +"\n");
 		
 	}
 	
 	public void direBonjour() {
 		
-		String txt = "Bonjour je m'appelle " + this.nom + " et j'aime boire du " + this.boisson;
+		String txt = "Bonjour ! Je m'appelle " + this.nom + " et j'aime boire du " + this.boisson + ", j'ai " + this.argent + " sous en poche.";
 		
 		parler(txt);
 		
@@ -47,11 +47,13 @@ public class Humain {
 		return nom;
 	}
 	
-	public void gagnerArgent() {
-		//TODO à completer ultérieurement 
+	public void gagnerArgent(int benef) {
+		
+		this.argent += benef;
 	}
 	
-	public void perdreArgent() {
-		//TODO à completer ultérieurement 
+	public void perdreArgent(int deficit) {
+		
+		this.argent -= deficit;
 	}
 }

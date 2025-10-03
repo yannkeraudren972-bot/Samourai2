@@ -11,11 +11,21 @@ public class Commercant extends Humain{
 	}
 	
 	public int seFaireExtorquer() {
-		return 0;
-		//TODO à faire 
+		
+		int argent = this.getArgent();
+		
+		this.perdreArgent(argent);
+		
+		String str ="J’ai tout perdu! Le monde est trop injuste..."; 
+		
+		this.parler(str);
+		
+		return argent;
+		 
 	}
 
 	public void recevoir(int argent) {
-		//TODO à faire
+		
+		this.gagnerArgent(argent);
 	}
 }
