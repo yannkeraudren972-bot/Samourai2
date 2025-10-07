@@ -15,7 +15,7 @@ public class Humain {
 	
 	public void parler(String texte) {
 		
-		System.out.println(this.nom + " - " + texte +"\n");
+		System.out.println("(" + this.nom + ")" + " - " + texte +"\n");
 		
 	}
 	

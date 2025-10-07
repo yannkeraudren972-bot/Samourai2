@@ -18,11 +18,13 @@ public class Yakusa extends Humain{
 		return clan;
 	}
 
-	public int getReputaion() {
+	public int getReputation() {
 		return reputation;
 	}
 	
 	public void extorquer(Commercant c) {
+		
+		this.reputation++;
 		
 		int benef = c.seFaireExtorquer();
 		
@@ -34,12 +36,27 @@ public class Yakusa extends Humain{
 	}
 	
 	public void gagnerDuel() {
-		//TODO à faire
+		
+		this.reputation++;
+		
+		String str = "J'ai gagné !!! contre ce ronin";
+		
+		this.parler(str);
 	}
 	
 	public int perdreDuel() {
-		//TODO à faire
-		return 0;
+		
+		int argent = this.getArgent();
+		
+		this.perdreArgent(argent);
+		
+		this.reputation--;
+		
+		String str = "J’ai perdu mon duel et mes " + argent +" sous, snif...";
+		
+		this.parler(str);
+		
+		return argent;
 	}
 	
 	@Override
