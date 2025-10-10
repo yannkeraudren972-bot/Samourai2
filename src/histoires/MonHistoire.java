@@ -3,6 +3,7 @@ package histoires;
 import personnages.Humain;
 import personnages.principaux.Commercant;
 import personnages.principaux.Ronin;
+import personnages.principaux.Samourai;
 import personnages.principaux.Yakusa;
 
 
@@ -23,10 +24,17 @@ public class MonHistoire {
 		ronin.donner(10, commercant );
 		ronin.provoquer(yakusa);
 		ronin.direBonjour();
-
-
 		
+		Ronin musaichi = new Samourai("Akimoto" , 20, "the" , "Miyamoto");
+		musaichi.direBonjour();
+		musaichi.boire();
 		
+		musaichi = (Samourai) musaichi; 
+		
+		Samourai musa = new Samourai("Aki", 25, "Saké", "Miata");
+		musa.direBonjour();
+		musa.boire("Wisky");
+
 
 	}
 
