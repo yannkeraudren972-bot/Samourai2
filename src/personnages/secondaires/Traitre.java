@@ -29,7 +29,23 @@ public class Traitre extends Samourai{
 	}
 	
 	public void extorquer(Commercant c) {
-		//TODO à remplir
+		 
+		if (this.traitrise >= 3) {
+			
+			String str = "Oh non, je suis beaucoup trop malicieux, je peux pas extorquer ce marchand";
+			parler(str);
+		
+		}else{
+			
+			int benef = c.seFaireExtorquer();
+			
+			this.gagnerArgent(benef);
+			
+			String str = "J’ai piqué le fric de " + c.getNom();
+			
+			this.parler(str);
+			
+		}
 	}
 	
 	public void faireLeGentil(Humain h, int argent) {
