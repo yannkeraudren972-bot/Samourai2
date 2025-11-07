@@ -5,6 +5,10 @@ import personnages.principaux.Commercant;
 import personnages.principaux.Ronin;
 import personnages.principaux.Samourai;
 import personnages.principaux.Yakusa;
+import personnages.secondaires.Colporteur;
+import personnages.secondaires.GrandMere;
+import personnages.secondaires.Ninja;
+import personnages.secondaires.Traitre;
 
 
 public class MonHistoire {
@@ -34,6 +38,33 @@ public class MonHistoire {
 		Samourai musa = new Samourai("Aki", 25, "Saké", "Miata");
 		musa.direBonjour();
 		musa.boire("Wisky");
+		
+		Commercant c2 = new Commercant("Fonderie", 60);
+		c2.direBonjour();
+		
+		Traitre traitre = new Traitre("Akito", 20, "Matcha", "Mimimato");
+		traitre.direBonjour();
+		traitre.extorquer(c2);
+		traitre.faireLeGentil(c2, 20);
+		traitre.direBonjour();
+		
+		GrandMere mamie = new GrandMere("Mamito");
+		mamie.direBonjour();
+		mamie.faireConnaissanceAvec(c2);
+		mamie.faireConnaissanceAvec(yakusa);
+		mamie.faireConnaissanceAvec(musa);
+		mamie.faireConnaissanceAvec(traitre);
+		
+		mamie.ragoter();
+		
+		Colporteur colporteur = new Colporteur("Yamaha", 50);
+		colporteur.direBonjour();
+		yakusa.extorquer(colporteur);
+		colporteur.direBonjour();
+		
+		Ninja ninja = new Ninja("Kawa", 60, "Saké", "Long Dock");
+		ninja.direBonjour();
+		
 
 
 	}

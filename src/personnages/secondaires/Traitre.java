@@ -49,7 +49,23 @@ public class Traitre extends Samourai{
 	}
 	
 	public void faireLeGentil(Humain h, int argent) {
-		//TODO à remplir 
+		
+		h.gagnerArgent(argent);
+		
+		int dixieme = (argent / 10) % 10;
+		
+		this.traitrise -= dixieme;
+		
+		if (this.traitrise < 0) {
+			
+			this.traitrise = 0;
+		}
+		
+		String str = "Je souhaite faire amie-amie avec " + h.getNom();
+		
+		parler(str);
+		
+		
 	}
 
 }
